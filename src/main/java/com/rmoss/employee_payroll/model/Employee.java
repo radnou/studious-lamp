@@ -4,11 +4,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+import java.util.Objects;
+
 @Entity
 public class Employee {
-    @Id
-    @GeneratedValue
-    private Long id;
+
+    private @Id
+    @GeneratedValue Long id;
     private String name;
     private String role;
 
@@ -17,17 +19,22 @@ public class Employee {
         this.role = role;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Employee() {
+
     }
 
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
+
     public Employee setName(String name) {
         this.name = name;
         return this;
@@ -40,5 +47,23 @@ public class Employee {
     public Employee setRole(String role) {
         this.role = role;
         return this;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+
+        return getId().equals(employee.getId()) && getName().equals(employee.getName()) && Objects.equals(getRole(), employee.getRole());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id, this.name, this.role);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" + "id=" + id + ", name='" + name + '\'' + ", role='" + role + '\'' + '}';
     }
 }
