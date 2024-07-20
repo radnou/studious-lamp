@@ -1,4 +1,4 @@
-package com.rmoss.employee_payroll.model;
+package com.rmoss.employee_payroll.order;
 
 public enum Status {
 

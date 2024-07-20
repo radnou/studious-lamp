@@ -1,6 +1,5 @@
-package com.rmoss.employee_payroll.controller;
+package com.rmoss.employee_payroll.employee;
 
-import com.rmoss.employee_payroll.utils.exception.EmployeeNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

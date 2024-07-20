@@ -1,4 +1,4 @@
-package com.rmoss.employee_payroll.model;
+package com.rmoss.employee_payroll.order;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

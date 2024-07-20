@@ -1,10 +1,10 @@
 package com.rmoss.employee_payroll;
 
-import com.rmoss.employee_payroll.model.Employee;
-import com.rmoss.employee_payroll.model.Order;
-import com.rmoss.employee_payroll.model.Status;
-import com.rmoss.employee_payroll.repository.EmployeeRepository;
-import com.rmoss.employee_payroll.repository.OrderRepository;
+import com.rmoss.employee_payroll.employee.Employee;
+import com.rmoss.employee_payroll.order.Order;
+import com.rmoss.employee_payroll.order.Status;
+import com.rmoss.employee_payroll.employee.EmployeeRepository;
+import com.rmoss.employee_payroll.order.OrderRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
