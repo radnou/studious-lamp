@@ -6,6 +6,8 @@ import com.rmoss.employee_payroll.repository.EmployeeRepository;
 import com.rmoss.employee_payroll.utils.exception.EmployeeNotFoundException;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,9 +48,15 @@ public class EmployeeController {
     // end::get-aggregate-root[]
 
     @PostMapping("/employees")
-    Employee newEmployee(@RequestBody Employee employee) {
-        return repository.save(employee);
+    ResponseEntity<?> newEmployee(@RequestBody Employee newEmployee) {
+
+        EntityModel<Employee> entityModel = assembler.toModel(repository.save(newEmployee));
+
+        return ResponseEntity //
+                .created(entityModel.getRequiredLink(IanaLinkRelations.SELF).toUri()) //
+                .body(entityModel);
     }
+
 
     @GetMapping("/employees/{id}")
     public EntityModel one(@PathVariable Long id) {
