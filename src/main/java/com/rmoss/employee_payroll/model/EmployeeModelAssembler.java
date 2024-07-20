@@ -1,9 +1,8 @@
-package com.rmoss.employee_payroll;
+package com.rmoss.employee_payroll.model;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 import com.rmoss.employee_payroll.controller.EmployeeController;
-import com.rmoss.employee_payroll.model.Employee;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;

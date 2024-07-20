@@ -1,6 +1,6 @@
 package com.rmoss.employee_payroll.controller;
 
-import com.rmoss.employee_payroll.EmployeeModelAssembler;
+import com.rmoss.employee_payroll.model.EmployeeModelAssembler;
 import com.rmoss.employee_payroll.model.Employee;
 import com.rmoss.employee_payroll.repository.EmployeeRepository;
 import com.rmoss.employee_payroll.utils.exception.EmployeeNotFoundException;
